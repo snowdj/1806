@@ -561,7 +561,7 @@ For a 2×2 matrix, it follows that det(A-λI)=λ²-λtr(A)+det(A), which is a us
 
 As an application of matrix powers, considered the famous [Fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number) 1,1,2,3,5,8,13,21,….  The n-th Fibonacci number fₙ satisfies the [linear recurrence relation](http://mathworld.wolfram.com/LinearRecurrenceEquation.html) fₙ=fₙ₋₁+fₙ₋₂, which we can express in terms of multiplication by a 2×2 matrix F that gives (fₙ,fₙ₋₁) from (fₙ₋₁,fₙ₋₂).  We found that the eigenvalues of F are (1±√5)/2.  The larger of these eigenvalues, (1+√5)/2≈1.618, is the so-called [golden ratio](https://en.wikipedia.org/wiki/Golden_ratio), and it means that the Fibonacci numbers blow up exponentially fast for large n.  Furthermore, we showed that the *ratio* fₙ/fₙ₋₁ of successive Fibonacci numbers goes to the golden ratio for large n.   Checked these facts numerically with a Julia notebook.
 
-**Further reading:** Strang, section 6.2 and 6.6; video [lecture 22](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-22-diagonalization-and-powers-of-a/) and video [lecture 28](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-28-similar-matrices-and-jordan-form/).
+**Further reading:** Strang, section 6.2; video [lecture 22](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-22-diagonalization-and-powers-of-a/) and video [lecture 28](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-28-similar-matrices-and-jordan-form/).
 
 ## Lecture 23 (November 5)
 
@@ -572,12 +572,14 @@ As an application of matrix powers, considered the famous [Fibonacci numbers](ht
 
 Spent a little time on an example of a Markov-matrix application: analyzing the game "Chutes and Ladders".   (Note that this is not a statistics class, so the calculations analyzing the probability distribution of the number of moves were just for fun.)
 
-**Further reading:** Strang, section 8.3 and video [lecture 24](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-24-markov-matrices-fourier-series/).
+**Further reading:** Strang, section 10.3 and video [lecture 24](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-24-markov-matrices-fourier-series/).
 
-## Upcoming Lecture 24 (November 7)
+## Lecture 24 (November 7)
 
-* [Power method](http://nbviewer.jupyter.org/github/stevengj/1806/blob/spring17/lectures/Power-Method.ipynb)
-* [Ordinary differential equations (ODEs)](http://nbviewer.jupyter.org/github/stevengj/1806/blob/fall17/lectures/ODEs.ipynb).
+* [pset 9 solutions](http://nbviewer.jupyter.org/github/stevengj/1806/blob/master/psets/pset9sol.ipynb)
+* [pset 10](http://nbviewer.jupyter.org/github/stevengj/1806/blob/master/psets/pset10.ipynb) (due Wed. Nov. 14 at 10:55am)
+* [Power method](http://nbviewer.jupyter.org/github/stevengj/1806/blob/master/lectures/Power-Method.ipynb)
+* [Ordinary differential equations (ODEs)](http://nbviewer.jupyter.org/github/stevengj/1806/blob/master/lectures/ODEs.ipynb).
 
 Discussed how multiplying by a matrix repeatedly is actually a starting point
 for many practical algorithms to compute eigenvectors and eigenvalues: the most
@@ -591,21 +593,29 @@ Matrix operation eᴬᵗ, the [matrix exponential](https://en.wikipedia.org/wiki
 
 **Further reading:** Strang, section 6.3 and video [lecture 23](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-23-differential-equations-and-exp-at/).
 
-## Upcoming Lecture 25 (November 9)
+## Lecture 25 (November 9)
 
-* [Matrix exponentials eᴬ](http://nbviewer.jupyter.org/github/stevengj/1806/blob/fall17/lectures/Matrix-Exponentials.ipynb).
+Continued discussion of ODEs from last lecture, focusing now on oscillating solutions and complex eigenvalues λ (see notebook).   Started talking about matrix exponentials from next lecture.
 
-Continued discussion of ODEs from last lecture, focusing now on oscillating solutions and complex eigenvalues λ (see notebook).   Then reformulated the solution of dx/dt=Ax in terms of the [matrix exponential](https://en.wikipedia.org/wiki/Matrix_exponential) eᴬᵗ, and discussed the properties of this fascinating and important matrix operation.
+# Lecture 26 (November 14)
+
+* [pset 10 solutions](http://nbviewer.jupyter.org/github/stevengj/1806/blob/master/psets/pset10sol.ipynb)
+* [pset 11](http://nbviewer.jupyter.org/github/stevengj/1806/blob/master/psets/pset11.ipynb) (due Wed. Nov. 21 at 10:55am)
+* [Matrix exponentials eᴬ](http://nbviewer.jupyter.org/github/stevengj/1806/blob/master/lectures/Matrix-Exponentials.ipynb).
+
+Reformulated the solution of dx/dt=Ax in terms of the [matrix exponential](https://en.wikipedia.org/wiki/Matrix_exponential) eᴬᵗ, and discussed the properties of this fascinating and important matrix operation.
+
+Begin discussing symmetric and Hermitian matrices from the next lecture.
 
 **Further reading:** Strang, section 6.3 and video [lecture 23](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-23-differential-equations-and-exp-at/).
 
-## Upcoming Lecture 26 (November 12)
+## Lecture 27 (November 16)
 
 Began discussing **symmetric matrices**.  A real-symmetric matrix A
 (i.e. a real A where A = Aᵀ), has three key properties:
 
 * All the eigenvalues λ are **real**.  (It follows that the eigenvectors are real too.)
-* Eigenvalues for different λ are **orthogonal** (and hence eigenvectors can be chosen to be **orthonormal**).
+* Eigenvectors for different λ are **orthogonal** (and hence eigenvectors can be chosen to be **orthonormal**).
 * The matrix is always **diagonalizable** (no funny defective case).
 
 This is extremely important.  Just by looking at the *structure* of such a matrix,
@@ -653,4 +663,130 @@ Since x≠0 for any eigenvector, we have xᴴx>0 and can divide by it to obtain
 λ=λ̄, which means that **λ is real**.  (It follows that the eigenvector x is also real *if*
 the matrix A is real-symmetric.)
 
-**Further reading:** Strang, sections 6.3–6.4, 9.2; video [lecture 23](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-23-differential-equations-and-exp-at/), [lecture 25](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-25-symmetric-matrices-and-positive-definiteness/), and [lecture 26](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-26-complex-matrices-fast-fourier-transform/).
+Similarly, given two eigensolutions Ax₁=λ₁x₁ and Ax₂=λ₂x₂ with λ₁≠λ₂, we
+can take the dot product x₁ᴴAx₂=λ₂x₁ᴴx₂=⋯, and after a couple of lines
+we immediately found x₁ᴴx₂=0.  The **eigenvectors are orthogonal**, and
+they can be chosen (scaled) to be **orthonormal**.
+
+I didn't prove diagonalizability.  (There are various proofs you can easily find online.  See e.g. [this video](https://www.youtube.com/watch?v=_2gGqEGA_IY) if you are curious, but
+they seem slightly too tricky for 18.06.)
+
+Since a **Hermitian matrix has an orthonormal basis of eigenvectors**, we
+can call the eigenvectors q₁,q₂,⋯, and put them as the columns of a
+**unitary** matrix Q (= orthogonal if A is real).  (Formerly, we called this X.)
+We can write:
+
+* A = QΛQᴴ = ∑ₖ λₖqₖqₖᴴ
+
+Equivalently, to **expand an arbitrary vector x** in the eigenvector basis,
+we **just need to take dot products**.   Formerly, to write x=∑ₖcₖxₖ, to find
+the coefficients c we had to solve Xx=x, or c=X⁻¹x.   Now, to write x=∑ₖcₖqₖ,
+the coefficients are just **cₖ=qₖᴴx**, or x=∑ₖqₖ(qₖᴴx).  *Expressing a vector
+in an orthonormal basis is easy.*
+
+Gave some examples of how you could use this to more easily understand
+e.g. working out Aⁿx if A is Hermitian (or real-symmetric).
+
+### Positive-definite/semidefinite matrices
+
+A lot of Hermitian matrices in practice come in the form BᴴB (or BᵀB for real B)
+for some matrix B.  e.g. we have seen several of these already, in least-squares
+and circuit/graph problems.   Such matrices are not only Hermitian, but they
+are **positive-definite**.
+
+In particular, a positive-definite matrix A is a Hermitian matrix A=Aᴴ that
+*additionally* has the following *equivalent* properties:
+
+* All eigenvalues λ of A are > 0.
+* xᴴAx > 0 for *any* vector x≠0.
+* A = BᴴB for some full-column-rank matrix B
+* All the pivots are > 0 in Gaussian elimination of A.
+
+These are all *equivalent*: any one of these properties implies *all* of
+the other properties for a Hermitian A.   I proved a couple of the equivalencies,
+but not all; some more equivalencies are proved in the textbook.
+
+A positive **semidefinite** matrix is almost the same, except you replace
+"> 0" with "≥ 0", and A = BᴴB is positive semidefinite for *any* B (not necessarily full rank).  (The pivots are > 0, but A may be singular.)
+
+(There are also "negative definite" and "negative semidefinite" matrices, which
+are the same things except with the opposites signs, i.e. "< 0" or "≤ 0" above.)
+
+**Further reading:** Strang, sections 6.3–6.5, 9.2; video [lecture 23](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-23-differential-equations-and-exp-at/), [lecture 25](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-25-symmetric-matrices-and-positive-definiteness/), and [lecture 26](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-26-complex-matrices-fast-fourier-transform/).
+
+## Lecture 28 (November 19)
+
+* [SVD and eigenproblems](http://nbviewer.jupyter.org/github/stevengj/1806/blob/master/lectures/SVD-eigenproblem.ipynb)
+
+### Eigenvalues and the SVD
+
+Connection of SVD to eigenvalues:  showed that the singular values σ² are the *nonzero eigenvalues* of *either* AᵀA *or* AAᵀ, the right singular vectors v are corresponding eigenvectors of  AᵀA, and the left singular vectors are eigenvectors of AAᵀ.   Long ago, we already showed that rank(AᵀA)=rank(AAᵀ)=rank(A)=rank(Aᵀ).   Now, showed that AᵀA and AAᵀ always have the *same nonzero eigenvalues*.  They can have different numbers of *zero* eigenvalues because N(AᵀA)=N(A) ≠ N(Aᵀ)=N(AAᵀ) in general.
+
+### Positive-definiteness and oscillating modes
+
+As an application of real-symmetric and positive-definite matrices, I returned
+to the system of masses and springs from lecture 25, but this time I considered
+n masses m and n+1 springs.   I showed that Newton's laws take the form:
+
+* mẍ = -DᵀKDx ⟹ ẍ = Ax, where D is an bidiagonal "difference" matrix, K is a diagonal matrix of spring constants, and A=-DᵀWD where W=K/m.
+
+A is obviously real-symmetric, so its eigenvalues λ are real.  With a little more work, we saw that it must be negative-definite.  In particular, take any eigensolution Ax=λx for x≠0.  We showed that xᵀAx=λxᵀx<0, which implies λ<0.  The reason is that xᵀAx=-xᵀDᵀWDx=-(Dx)ᵀWDx=-yᵀWy where y=Dx, and (i) y≠0 since D is full column rank (Dᵀ is upper triangular so we could just "read off" its rank), and (ii) W is a diagonal matrix of positive entries so it is automatically positive-definite, or alternatively we can just write out yᵀWy and see that it is positive for y≠0.
+
+The fact that A is negative definite allowed us to derive that *any* such system of masses and springs has *orthogonal oscillating solutions* called the [normal modes](https://en.wikipedia.org/wiki/Normal_mode). In particular, given the eigenvectors qⱼ (chosen orthonormal), satisfying Aqⱼ=λⱼqⱼ with λⱼ>0, we expanded the solution x(t)=∑ⱼcⱼqⱼ in the basis of these eigenvectors.  For each eigenvector component, the matrix A acts just like a number λ, allowing us to easily solve the equation c̈ⱼ=-λⱼcⱼ to get sines and cosines, and hence to get the general solution:
+
+* x(t) = ∑ⱼ [αⱼ cos(ωⱼt) + βⱼ sin(ωⱼt)] qⱼ
+
+where ωⱼ=√-λⱼ, and αⱼ and βⱼ are determined from the initial conditions x(0) and ẋ(0).  (You solved a similar problem in homework, except that there the matrix A had no special structure.)
+
+The key point is that the **structure** of the problem told us that λⱼ<0 and
+hence that the **frequencies** ωⱼ are **real** numbers.  (If they were complex, we would have exponentially growing or decaying solutions, which would make no physical sense for a system of lossless springs and masses.)  The moral of this story is that Hermitian and definite matrices don't just fall down out of the sky, they arise from how the matrix was constructed, and that these matrix properties are often the key to understanding the physical properties of real problems.
+
+**Further reading:** Strang, sections 7.1–7.2, and video [lecture 29](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-29-singular-value-decomposition/)
+Strang, section 10.2.  See also [these notes on the springs-and-masses problem](http://math.mit.edu/~stevenj/18.303/lecture-5.5.pdf) from [18.303](http://math.mit.edu/~stevenj/18.303/) (you can ignore the last two pages, which go beyond 18.06, and ignore the Δx factor which is used in 18.303 to connect the discrete problem to a continuous problem).
+
+# Lecture 28 (Nov. 21)
+
+* [Statistics and PCA](http://nbviewer.jupyter.org/github/stevengj/1806/blob/master/lectures/Statistics-and-PCA.ipynb)
+* [Eigen-walker demo](https://www.biomotionlab.ca/Demos/BMLwalker.html)
+* [pset 11 solutions](http://nbviewer.jupyter.org/github/stevengj/1806/blob/master/psets/pset11sol.ipynb)
+* [pset 12](http://nbviewer.jupyter.org/github/stevengj/1806/blob/master/psets/pset12.ipynb) (due Wed. Nov. 28 at 10:55am)
+
+Discussed the relationship of mean, variance, and covariance/correlation to linear algebra, expressing them in terms of dot products and projections.  Given an m×n matrix A whose rows are a bunch of different datasets, with the means subtracted, defined the covariance matrix S=AAᵀ/(n-1).   The eigenvectors of S define a coordinate system of *uncorrelated variables*, with the eigenvalues λ=σ² being the variances in each uncorrelated direction.   This is called **principal components analysis** in statistics, and allows us to identify the *uncorrelated variables that are responsible for most of the variation* (biggest σ²) in the data.
+
+Showed that PCA is exactly what the SVD of A gives us.  The left singular vectors of A are precisely the orthonormal eigenvectors of AAᵀ, and the singular values σ are precisely the square roots of the variances (if you normalize correctly).
+
+Gave some examples (see notebook), and closed with the [eigen-walker data](http://blogs.mathworks.com/cleve/2016/04/11/the-eigenwalker-model-of-the-human-gait/): PCA from a real experiment measuring human gaits, resulting in the cool animation of the singular vectors linked above.
+
+**Further reading**: Strang book, sections 7.3, 12.1, 12.2.  Googling "principal components analysis" or looking it up in any applied-statistics textbook will give you a lot more detail and examples.
+
+# Lecture 29 (Nov. 26)
+
+Examined the analogues of Hermitian positive-definite matrices, matrix exponentials, etcetera, for *infinite-dimensional* linear algebra.  (This material will *not* be on the final.)   It turns out that this is tremendously important for understanding [partial differential equations (PDEs)](https://en.wikipedia.org/wiki/Partial_differential_equation) arising in science and engineering.
+
+Earlier in the class, we already saw how we can define infinite-dimensional vector spaces of functions, "dot products" of functions via integrals, and hence orthogonal bases of functions, projection, etcetera.  Now, we look at linear operators on functions, and in particular I looked at A=d²/dx² acting on functions u(x)
+over a [domain Ω](https://en.wikipedia.org/wiki/Domain_of_a_function) = [0,L], i.e. functions for 0 ≤ x ≤ L, with the [boundary condition](https://en.wikipedia.org/wiki/Dirichlet_boundary_condition) u(0)=u(L)=0.
+
+First, we looked at the eigenfunctions, satisfying Au=λu.  These are easy to find: uₙ(x)=sin(nπx/L) for n=1,2,3,…, with eigenvalues λₙ=-(nπ/L)².   Notice that the eigenvalues are real and negative.  And the
+eigenfunctions are none other than our "Fourier sine series" basis functions, way back from lecture 16, which are orthogonal under the dot product u⋅v=∫ūv.   So, it looks much like a real-symmetric negative-definite eigenproblem!  But in what sense can we say "Aᴴ=A" when A is a derivative?
+
+The key property of a transpose/adjoint is not that it swaps rows and columns, but rather that (Aᴴx)⋅y=x⋅(Ay) for any real vectors x and y, and a Hermitian matrix has (Ax)⋅y=x⋅(Ay).   In fact, we can use this as the *definition* of the "adjoint" for any vector space with a dot product: Aᴴ is defined as the operator that makes (Aᴴu)⋅v=u⋅(Av) for any u,v.    If we apply that to A=d²/dx², we have u⋅(Av)=∫ūv″, and "transposing" A means [integrating by parts](https://en.wikipedia.org/wiki/Integration_by_parts) to make the derivatives act on u instead of v.   Integrating by parts twice, and applying the boundary conditions u(0)=u(L)=0=v(0)=v(L) from our function space, we find that (Au)⋅v=u⋅(Av): **A=d²/dx² is a real-symmetric operator**.
+
+I then showed how the fact that λ is real and the eigenfunctions are orthogonal follows — in fact, the proof is essentially identical to the proof for matrices.   Furthermore, if we integrate by parts only once, we saw that u⋅Au=-∫|u′|²≤0, and =0 only if u=0, so A is negative definite, and the proof that λ<0 is the same as before.
+
+Furthermore, just as we solved dx/dt = Ax by eᴬᵗx(0) and interpreted this as multiplying each eigenvector by exp(λt), we can similarly solve the partial differential equation ∂u/∂t=∂²u/∂x² (the [diffusion equation](https://en.wikipedia.org/wiki/Diffusion_equation)) as multiplying u(x,0) by the operator exponential exp(t ∂²/∂x²).  This seems horrible until we realize that it again just multiplies each eigenfunction by exp(λt).  So, if we expand the initial condition in the uₙ basis (a Fourier sine series), then each term is just multiplied by exp(λₙt) to get the solution u(x,t).  This is **exponentially decaying** because the eigenvalues are negative.  Similarly, if we solve ü=∂²u/∂t²=∂²u/∂x² (the [wave equation](https://en.wikipedia.org/wiki/Wave_equation)), it is essentially the same as ẍ=Ax from the previous mass-and-spring lecture: the solutions are **oscillating** with real frequencies ω=√-λ because the eigenvalues λ of ∂²/∂x² are < 0.
+
+The wonderful thing about this approach is that it allows us to derive real λ<0 and orthogonal eigenfunctions even in cases that we can't solve.  e.g. a slight variation is to consider the operator Bu=(cu′)′ for some given real function c(x)>0.  In this case, we can't find the eigenfunctions or eigenvalues analytically for most c(x), but essentially the same derivation again shows B=Bᴴ and negative-definite, so we know that the eigenvalues are real and positive and the eigenfunctions are orthogonal (an orthogonal basis).  In a diffusion equation u̇=(cu′)′, the function c(x) represents a variable "diffusivity" (or thermal conductivity) representing how easy it is to diffuse in different materials.  Even though we can no longer solve this problem analytically, we *still* know it has decaying solutions.  Or, in a wave equation ü=(cu′)′, the function c(x) could represent a variable "springiness" at different points in space (different materials), and we *still* know it has *oscillating* solutions.   This is an extremely powerful way to understand PDEs (which usually cannot be solved in closed form) by looking at their *structure*.
+
+The main complication with functions is understanding when the operator is "diagonalizable," i.e. when the functions uₙ form a basis for "all" functions.  This is tricky, because functions can do crazy things (like blow up or oscillate infinitely fast) that column vectors can't, and rigorous analysis devotes a lot of effort to carefully defining the set of functions and operators that are "nicely behaved" so that linear algebra works as expected.  (Figuring out when, exactly, the Fourier sine series converges took 150 years!)  In physical settings, however, such "crazy" functions rarely arise, and it is often reasonable to assume that the eigenfunctions uₙ of a Hermitian operator form a basis for all functions that you care about.   Another tricky issue is defining what it means for the operator to be "square", which essentially corresponds to comparing the *domains* of A and and its adjoint Aᴴ.
+
+**Further reading**:  Linear algebra applied to functions and PDEs can be found in [18.303](http://math.mit.edu/~stevenj/18.303/), 18.101 (functional analysis), and many other courses (e.g. quantum mechanics 8.04+ is taught this way).   See also my [notes on Hermitian operators for 18.06 from Fall 2007](http://web.mit.edu/18.06/www/Fall07/operators.pdf) which gives an informal introduction similar to my presentation in class.  Strang's book [Computational Science and Engineering](http://math.mit.edu/~gs/cse/) gives a more computational viewpoint on this subject.  The linear-algebra approach to the 1d case of functions u(x) and second-derivative operators is often called [Sturm–Liouville theory](https://en.wikipedia.org/wiki/Sturm%E2%80%93Liouville_theory), but nowadays people apply similar concepts to more complicated operators in higher dimensions.  Scientists and engineers usually adopt an informal approach to this subject, whereas a rigorous approach is much more tricky and requires the spaces of allowed functions and operators to be carefully circumscribed, leading to the topic of [functional analysis](https://en.wikipedia.org/wiki/Functional_analysis).
+
+## Exam 3 (Nov 30, 11am in 54-100)
+
+Exam 3 will cover the material through **lecture 28** and **pset 12**: exam-1 and exam-2 material, determinants, eigenvalues/eigenvectors, diagonalization, similar matrices, matrix powers and linear recurrences xₙ=Aⁿx₀, linear ODEs, matrix exponentials, complex matrices and the adjoint Aᴴ, real-symmetric/Hermitian matrices, positive-definite and semidefinite matrices, SVDs.
+
+* Review session: TBA
+
+* Practice problems: [Fall 2017 exam 3](https://github.com/stevengj/1806/blob/fall17/exams/exam3.pdf) ([solutions](https://github.com/stevengj/1806/blob/fall17/exams/exam3-sol.pdf)); [Spring 2009 exam 3](http://web.mit.edu/18.06/www/Spring09/examsS09.html); [Spring 2014 exam 3](http://web.mit.edu/18.06/www/Spring14/oldS14.html) ([solutions](http://web.mit.edu/18.06/www/Spring09/quiz3-s09-soln.pdf)); [Fall 2013 exam 2, problem 3](http://web.mit.edu/18.06/www/Fall13/exam2_f13.pdf) ([solutions](http://web.mit.edu/18.06/www/Fall13/exam2_f13_sol.pdf)); [Fall 2013 exam 3](http://web.mit.edu/18.06/www/Fall13/oldF13.html) ([solutions](http://web.mit.edu/18.06/www/Fall13/exam3_f13_sol.pdf)); [Fall 2012 exam 3, problems 1, 3, 4](http://web.mit.edu/18.06/www/Fall12/oldF12.html) ([solutions](http://web.mit.edu/18.06/www/Fall12/Exam%203/quiz3-1806-f12-solution.pdf)); [Spring 2012 exam 3](http://web.mit.edu/18.06/www/Spring12/oldS12.html) ([solutions](http://web.mit.edu/18.06/www/Spring12/q3_sp12_sol.pdf)); [Fall 2011 exam 3, problems 1.1–1.2, 2, 3](http://web.mit.edu/18.06/www/Fall11/oldF11.html) ([solutions](http://web.mit.edu/18.06/www/Fall11/q3_f11_sol.pdf)); [Fall 2011 exam 2, problem 3](http://web.mit.edu/18.06/www/Fall11/q2_f11.pdf) ([solutions](http://web.mit.edu/18.06/www/Fall11/q2_f11_sol.pdf)); [Fall 2007 exam 3](http://web.mit.edu/18.06/www/Fall07/examsF07.html) ([solutions](http://web.mit.edu/18.06/www/Fall07/quiz3-1806-F07-sol.pdf))
+
+* [Exam 3](exams/exam3.pdf) and [solutions](exams/exam3-sol.pdf).
